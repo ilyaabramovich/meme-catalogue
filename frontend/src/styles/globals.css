@@ -1,0 +1,31 @@
+@import url('./font.css');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  color: var(--black);
+  background: #F5F6F8;
+
+  font-family: var(--font-family);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: 'Lobster', cursive;
+}
