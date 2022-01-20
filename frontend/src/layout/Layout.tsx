@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 import styles from './Layout.module.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Layout: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <header className={styles.header}>Header</header>
+      <Header className={styles.header} />
       <main className={styles.content}>Content</main>
-      <footer className={styles.footer}>Footer</footer>
+      <Footer className={styles.footer} />
     </div>
   );
 }
