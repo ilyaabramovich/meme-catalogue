@@ -5,8 +5,8 @@ import './index.css'
 export default function MemeForm() {
   const [description, setDescription] = useState('')
   const [error, setError] = useState(null)
-  const [imageFile, setImageFile] = useState(null)
-  const [imagePreview, setImagePreview] = useState('')
+  const [file, setFile] = useState(null)
+  const [filePreview, setFilePreview] = useState('')
 
   const imageInputRef = useRef(null)
 
@@ -18,25 +18,25 @@ export default function MemeForm() {
     const file = event.target.files[0]
     const imageBase64 = URL.createObjectURL(file)
 
-    setImagePreview(imageBase64)
-    setImageFile(file)
+    setFilePreview(imageBase64)
+    setFile(file)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    if (!imageFile) {
+    if (!file) {
       return
     }
 
     const formData = new FormData();
     formData.append('description', description)
-    formData.append('file', imageFile)
+    formData.append('file', file)
 
     createMeme(formData).then(() => {
       setDescription('')
-      setImagePreview('')
-      setImageFile(null)
+      setFilePreview('')
+      setFile(null)
     }).catch(err => {
       setError(err)
     })
@@ -63,7 +63,7 @@ export default function MemeForm() {
       </div>
       <button type="submit">Add meme</button>
       <div>
-        <img src={imagePreview} alt={description} style={{maxWidth: '100%', height: '300px'}}/>
+        <img src={filePreview} alt={description} style={{maxWidth: '100%', height: '300px'}}/>
       </div>
     </form>
   )
