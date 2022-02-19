@@ -57,7 +57,8 @@ export default function MemeForm() {
         <label htmlFor="file" className="form-label">
           Image
         </label>
-        <input required id='file' className='form-control' name='file' type="file" ref={imageInputRef}
+        <input required id='file' className='form-control' name='file' type="file"
+               accept="image/png, image/jpeg, image/webp, image/gif" ref={imageInputRef}
                onChange={handleImagePreview}/>
       </div>
       <button type="submit">Add meme</button>
