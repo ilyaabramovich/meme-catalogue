@@ -50,7 +50,7 @@ export default function MemeForm() {
         <label className="form-label" htmlFor="description">
           Description
         </label>
-        <input className='form-control' name='description' id='description' minLength={3} maxLength={300}
+        <textarea className='form-control' name='description' id='description' minLength={3} maxLength={300}
                value={description}
                onChange={handleDescriptionChange}/>
       </div>
