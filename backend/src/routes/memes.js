@@ -8,4 +8,6 @@ memesRouter.get('/:id', getMeme)
 
 memesRouter.post('/', createMeme)
 
+memesRouter.post('/upload', )
+
 module.exports = memesRouter
