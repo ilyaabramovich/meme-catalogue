@@ -14,7 +14,7 @@ export default function MemeForm() {
     setDescription(event.target.value)
   }
 
-  const handleImagePreview = (event) => {
+  const handleFileChange = (event) => {
     const file = event.target.files[0]
     const imageBase64 = URL.createObjectURL(file)
 
@@ -59,7 +59,7 @@ export default function MemeForm() {
         </label>
         <input required id='file' className='form-control' name='file' type="file"
                accept="image/png, image/jpeg, image/webp, image/gif" ref={imageInputRef}
-               onChange={handleImagePreview}/>
+               onChange={handleFileChange}/>
       </div>
       <button type="submit">Add meme</button>
       <div>
