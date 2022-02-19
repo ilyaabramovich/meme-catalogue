@@ -43,6 +43,7 @@ export default function MemeForm() {
   }
 
   return (
+    <div className={'wrapper'}>
     <form className='meme-form' encType="multipart/form-data" onSubmit={handleSubmit}>
       {error && <p>{error?.message}</p>}
       <div className="form-group">
@@ -62,9 +63,10 @@ export default function MemeForm() {
                onChange={handleFileChange}/>
       </div>
       <button type="submit">Add meme</button>
-      <div>
-        <img src={memeFilePreview} alt={description} style={{maxWidth: '100%', height: '300px'}}/>
-      </div>
     </form>
+      <div>
+        <img src={memeFilePreview} alt={description} className={'file-preview'}/>
+      </div>
+  </div>
   )
 }
