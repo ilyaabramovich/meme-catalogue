@@ -1,0 +1,25 @@
+{
+  "name": "meme-catalogue",
+  "description": "App to create and share memes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyaabramovich/meme-catalogue.git"
+  },
+  "keywords": [
+    "React",
+    "Node.js",
+    "MongoDB",
+    "memes"
+  ],
+  "author": "Ilya Abramovich (https://github.com/ilyaabramovich)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilyaabramovich/meme-catalogue/issues"
+  },
+  "homepage": "https://github.com/ilyaabramovich/meme-catalogue#readme"
+}

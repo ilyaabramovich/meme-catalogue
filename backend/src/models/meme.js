@@ -1,14 +1,15 @@
 const mongoose = require('mongoose')
+const File = require('../models/file')
 const { Schema } = mongoose
 
 const memeSchema = new mongoose.Schema({
-  name: {
+  description: {
     type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 150,
-    default: '',
+    required: false,
+    minlength: 3,
+    maxlength: 300
   },
+  file: { type: Schema.Types.ObjectId, ref: 'File' },
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
 })
 
