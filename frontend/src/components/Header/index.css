@@ -1,10 +1,133 @@
 .header {
+    --search-input-height: 1.1em;
+    --header-animation-time: 0.6s;
+}
+
+.header__inner {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.header:not(.header--open):not(.header--static) .header__inner--menu {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0s, var(--header-animation-time), var(--header-animation-time);
+}
+
+.header__inner--menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    align-content: start;
+    grid-template-areas:
+        "logo button"
+        "list list";
+    font-size: var(--font-size-xl);
+    line-height: var(--font-line-height-xl);
+    background-color: var(--color-background);
 }
 
 .header-nav {
     display: flex;
     gap: 2ch;
+}
+
+.base-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header__menu {
+    grid-area: list;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+}
+
+.logo__link {
+    text-decoration: none;
+}
+
+.nav-list {
+    display: grid;
+    gap: 16px;
+}
+
+.menu-toggle__icon--close {
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle__icon {
+}
+
+.menu-toggle__icon circle {
+    fill: var(--color-text);
+}
+
+.menu-toggle__icon path {
+    fill: var(--color-background);
+}
+
+.header__inner--menu .header__toggle {
+    grid-area: button;
+}
+
+.menu-toggle::after {
+    content: "";
+    position: absolute;
+    inset: -10px;
+}
+
+.header-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    position: relative;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    display: block;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle::after {
+    position: absolute;
+    content: "";
+    inset: -10px;
+}
+
+.menu-toggle__icon {
+
+}
+
+.menu-toggle__icon--open {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-toggle__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
 }

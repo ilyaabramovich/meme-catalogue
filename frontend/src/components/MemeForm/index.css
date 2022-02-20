@@ -1,5 +1,4 @@
 .meme-form {
-    max-width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -26,17 +25,22 @@
     flex-wrap: wrap;
     gap: 2ch;
     justify-content: center;
+    flex-direction: column;
 }
 
+.file-preview {
+    align-self: center;
+    max-width: 100%;
+}
 
 @media (min-width: 768px) {
     .wrapper {
         justify-content: flex-start;
         gap: 4ch;
+        flex-direction: row;
     }
-}
 
-.file-preview {
-    max-width: 100%;
-    height: 300px;
+    .file-preview {
+        height: 300px;
+    }
 }
