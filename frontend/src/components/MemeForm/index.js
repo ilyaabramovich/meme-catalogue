@@ -5,7 +5,7 @@ import './index.css'
 export default function MemeForm() {
   const [description, setDescription] = useState('')
   const [error, setError] = useState(null)
-  const [memeFile, setMemeFile] = useState(null)
+  const [memeFile, setMemeFile] = useState('')
   const [memeFilePreview, setMemeFilePreview] = useState('')
 
   const imageInputRef = useRef(null)
