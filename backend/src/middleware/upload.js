@@ -1,15 +1,15 @@
 const {GridFsStorage} = require("multer-gridfs-storage");
 const multer = require("multer");
 const util = require("util");
-
-const supportedMimeTypes = ["image/png", "image/jpeg", "image/gif"];
+const {SUPPORTED_MIME_TYPES} = require("../constants");
+const {buildFilename} = require("../utils");
 
 const storage = new GridFsStorage({
   url: process.env.DB_URL,
   options: {useNewUrlParser: true, useUnifiedTopology: true},
   file: (req, file) => {
-    const filename = `${Date.now()}-${file.originalname}`
-    if (!supportedMimeTypes.includes(file.mimetype)) {
+    const filename = buildFilename(file);
+    if (!SUPPORTED_MIME_TYPES.includes(file.mimetype)) {
       return filename;
     }
 
@@ -20,6 +20,6 @@ const storage = new GridFsStorage({
   }
 });
 
-const uploadFile = multer({ storage: storage }).single("file");
+const uploadFile = multer({storage: storage}).single("file");
 
 module.exports = util.promisify(uploadFile);
